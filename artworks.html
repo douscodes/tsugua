@@ -1,20 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Linktree</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Artworks</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container">
-    <img src="images/clove1.png" alt="Profile Picture" class="profile-pic">
-    <h1>Tsugua</h1>
-    <p class="tagline">wala pa tamad pa ko ilagay HAHAHA</p>
+<body class="artworks-page">
 
-    <div class="links">
-        <a href="index.html" class="link-button">🏠 Home</a>
-      </div>
-  </div>
+<!-- 🔹 Header -->
+    <header class="reviews-header">
+            <h1>🎨 My Artworks</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="about.html">About Me</a>
+            </nav>
+    </header>
+
+<!-- 🔹 Main Gallery -->
+    <main class="artworks-container">
+            <div class="artworks-gallery">
+                <!-- Add your artwork images here -->
+                <img src="images/artworks/jannahbanana.PNG" alt="Jannah Banana" onclick="openArtModal('jannahbanana')">
+                <img src="images/artworks/Zoeymylove.PNG" alt="Zoey My Love" onclick="openArtModal('zoeymylove')">
+                <img src="images/artworks/rieo7.PNG" alt="Faith Marie o7" onclick="openArtModal('rio07')">
+                <img src="images/artworks/nikegirl.PNG" alt="Nike Girl" onclick="openArtModal('nikegirl')">
+                <img src="images/artworks/keqing.png" alt="Keqing My BB Girl" onclick="openArtModal('keqing')">
+            </div>
+    </main>
+
+
+
+<!-- 🔹 Modal Structure -->
+    <div id="artModal" class="art-modal">
+        <div class="art-modal-content">
+            <span class="close" onclick="closeArtModal()">&times;</span>
+            <img id="artModalImg" src="" alt="">
+            <h2 id="artModalTitle"></h2>
+            <p id="artModalDesc"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
