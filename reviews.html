@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Reviews</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="reviews-page"> 
+    <header class="reviews-header">
+        <h1>🎬 My Movie Reviews</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="artworks.html">Artworks</a>
+            <a href="about.html">About Me</a>
+        </nav>
+    </header>
+
+    <main class="reviews-grid">
+    <!-- POSTERS -->
+        <img src="images/posters/oldboy.jpg" alt="oldboy" class="poster" onclick="openModal('modal-oldboy')">
+        <img src="images/posters/itswhatsinside.jpg" alt="itswhatsinside" class="poster" onclick="openModal('modal-itswhatsinside')">
+    </main>
+
+  <!-- REVIEW MODALS -->
+    <div id="modal-oldboy" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="movie-title">Oldboy (2003)</h2>
+                <div class="header-right">
+                    <span class="movie-director"><i class="fa-solid fa-video"></i> Park Chan-wook</span> 
+                    <span class="close" onclick="closeModal('modal-oldboy')">&times;</span>
+                </div>
+            </div>
+            <div class="modal-rating" data-rating="4"></div>
+            <p class="modal-review">
+                What I like best about oldboy are the various storytelling devices used by the movie. 
+                Oon one hand you have the main character telling the story from his pov so you don't have the full picture. 
+                Then you are given the puzzle pieces to fill in those blanks for yourself. 
+                The cinematography of this movie is one of a kind and the more you pay attention, the more you realize the underlying meaning of what is shown to you. 
+                It's a movie I really enjoyed watching and I'd recommend others watch but not watch again myself. 
+                The way all the pieces fit into place at the end really scratched my brain.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-itswhatsinside" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="movie-title">It's What's Inside (2024)</h2>
+                <div class="header-right">
+                    <span class="movie-director"><i class="fa-solid fa-video"></i> Greg Jardin</span> 
+                    <span class="close" onclick="closeModal('modal-itswhatsinside')">&times;</span>
+                </div>
+            </div>
+            <div class="modal-rating" data-rating="3.5"></div>
+            <p>
+                The unique way the movie portrayed flashbacks was really cool for me. 
+                The cinematic use of colors in the scenes really improved the storytelling. 
+                The story itself is a bit above average I guess, some scenes kind of made me cringe. 
+                Overall it's a movie I would recommend to a friend or watch again with them. 
+                One of the very few movies where I absolutely abhor the protagonist/main character.   
+            </p>
+
+        </div>
+    </div>
+<!-- 
+    TEMPLATE FOR ADDING MODAL 
+
+    <div id="modal-" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="movie-title">TITLE</h2>
+                <div class="header-right">
+                    <span class="movie-director"><i class="fa-solid fa-video"></i> DIRECTOR</span> 
+                    <span class="close" onclick="closeModal('modal-oldboy')">&times;</span>
+                </div>
+            </div>
+            <div class="modal-rating" data-rating="4"></div>
+            <p class="modal-review">
+                REVIEW
+            </p>
+        </div>
+    </div>
+-->
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    window.addEventListener("click", function(event) {
+        const modals = document.querySelectorAll(".modal");
+        modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const ratings = document.querySelectorAll(".modal-rating");
+
+        ratings.forEach(ratingEl => {
+            const rating = parseFloat(ratingEl.getAttribute("data-rating")) || 0;
+            let starsHTML = "";
+
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+            const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+            // Full stars
+            for (let i = 0; i < fullStars; i++) {
+            starsHTML += '<i class="fa-solid fa-star"></i>';
+            }
+
+            // Half star
+            if (hasHalfStar) {
+            starsHTML += '<i class="fa-solid fa-star-half-stroke"></i>';
+            }
+
+            // Empty stars
+            for (let i = 0; i < emptyStars; i++) {
+            starsHTML += '<i class="fa-regular fa-star"></i>';
+            }
+
+            starsHTML += ` <span class="rating-text">${rating}/5</span>`;
+
+            ratingEl.innerHTML = starsHTML;
+        });
+    });
+  </script>
+</body>
+</html>
