@@ -10,7 +10,7 @@ const movies = [
                 The cinematography of this movie is one of a kind and the more you pay attention, the more you realize the underlying meaning of what is shown to you.
                 It's a movie I really enjoyed watching and I'd recommend others watch but not watch again myself.
                 The way all the pieces fit into place at the end really scratched my brain.`,
-        poster: "images/posters/oldboy.jpg"
+        poster: "images/posters/oldboy.webp"
     },
     {
         id: "itswhatsinside",
@@ -22,8 +22,16 @@ const movies = [
                 The story itself is a bit above average I guess, some scenes kind of made me cringe.
                 Overall it's a movie I would recommend to a friend or watch again with them.
                 One of the very few movies where I absolutely abhor the protagonist/main character.`,
-        poster: "images/posters/itswhatsinside.jpg"
-    }
+        poster: "images/posters/itswhatsinside.webp"
+    },
+    // {
+    //     id: "",
+    //     title: "()",
+    //     director: "",
+    //     rating: ,
+    //     review: ``,
+    //     poster: "images/posters/.jpg" 
+    // },
 ];
 
 // THIS CREATES THE POSTERS IN REVIEWS.HTML
