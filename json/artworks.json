@@ -23,6 +23,41 @@
         "src": "images/artworks/keqing.webp",
         "title": "Keqing My BB Girl",
         "desc": "my favorite catgirl"
+    },
+    "powermygf": {
+        "src": "images/artworks/powermygf.webp",
+        "title": "Power My Gf",
+        "desc": "power > makika, deal with it"
+    },
+    "mona": {
+        "src": "images/artworks/mona.webp",
+        "title": "Mona",
+        "desc": "may your 50/50s be mona"
+    },
+    "inumaki": {
+        "src": "images/artworks/inumaki.webp",
+        "title": "Inumaki",
+        "desc": "tuna mayo maki roll"
+    },
+    "inktoberday1": {
+        "src": "images/artworks/inktoberday1.webp",
+        "title": "Princess Momononkokuke idfk",
+        "desc": "Inktober 2020 Day 1"
+    },
+    "inktoberday2": {
+        "src": "images/artworks/inktoberday2.webp",
+        "title": "Mary and the Witch's Flower",
+        "desc": "Inktober 2020 Day 2"
+    },
+    "inktoberday3": {
+        "src": "images/artworks/inktoberday3.webp",
+        "title": "Calcifer",
+        "desc": "Inktober 2020 Day 3"
+    },
+    "inktoberday4": {
+        "src": "images/artworks/inktoberday4.webp",
+        "title": "Just some ramen from a random ghibli film I forgot which one",
+        "desc": "Inktober 2020 Day 4, this is the last one kasi tinamad na sha"
     }
 } 
   
