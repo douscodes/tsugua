@@ -1,0 +1,147 @@
+body.artworks-page {
+    display: block;          
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* 🔹 same as index */
+    color: #fff;
+    min-height: 100vh;
+}
+
+.artworks-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.artworks-gallery {
+    column-count: 4;        /* 4 columns on large screens */
+    column-gap: 15px;
+}
+
+.artworks-gallery img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: block;
+    break-inside: avoid;     /* masonry effect */
+    object-fit: cover;
+}
+
+/* modals */
+.art-modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    
+    opacity: 0;           /* start transparent */
+    transition: opacity 0.3s ease;
+}
+
+.art-modal .close {
+    position: absolute;
+    top: 10px;          /* distance from top of modal content */
+    right: 15px;        /* distance from right of modal content */
+    font-size: 28px;
+    color: #e50914;
+    cursor: pointer;
+    z-index: 10;        /* ensure it sits above content */
+}
+
+.art-modal .close:hover {
+    color: white;
+}
+
+.art-modal-content {
+    position: relative;
+    background: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    max-height: 90%;
+    color: #fff;
+
+    transform: scale(0.8);  /* start slightly smaller */
+    transition: transform 0.3s ease;
+}
+
+.art-modal-content img {
+    max-width: 100%;
+    max-height: 60vh;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.art-modal h2 {
+    margin: 10px 0 5px;
+}
+
+.art-modal p {
+    font-size: 1rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.art-modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.art-modal.show .art-modal-content {
+  transform: scale(1);   /* scale up to full size */
+}
+/* modals */
+
+/* 📱 Responsive breakpoints */
+@media (max-width: 1024px) {
+    .artworks-gallery { column-count: 3; }
+}
+
+@media (max-width: 768px) {
+    .artworks-gallery { column-count: 2; }
+}
+
+@media (max-width: 480px) {
+    .artworks-gallery { column-count: 1; }
+}
+
+.artworks-header {
+    display: block;        /* ensures it acts as a block element */
+    width: 100%;           /* spans across screen */
+    background: none;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px none;
+}
+
+.artworks-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.artworks-header nav {
+    margin-top: 10px;
+}
+
+.artworks-header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.artworks-header nav a:hover {
+    color: #e50914;
+}
+
+.artworks-gallery img:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
