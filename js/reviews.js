@@ -8,15 +8,6 @@ function closeModal(id) {
     modal.classList.remove("show");
 }
 
-window.addEventListener("click", function(event) {
-    const modals = document.querySelectorAll(".modal");
-    modals.forEach(modal => {
-        if (event.target === modal) {
-            modal.classList.remove("show");
-        }
-    });
-});
-
 document.addEventListener("DOMContentLoaded", () => {
     const ratings = document.querySelectorAll(".modal-rating");
 
@@ -48,3 +39,4 @@ document.addEventListener("DOMContentLoaded", () => {
         ratingEl.innerHTML = starsHTML;
     });
 });
+
